@@ -10,6 +10,7 @@ return function (Layer, nipta)
   local pta_ref = Layer.reference (pta)
   local action = Layer.require "cosy/formalism/action"
   local number = Layer.require "cosy/formalism/literal.number"
+  local boolean_operation_constraints = Layer.require "cosy/formalism/NIPTA/operation/boolean_operation"
 
   nipta [refines] = {
     record,
@@ -69,6 +70,11 @@ return function (Layer, nipta)
       value_type = number,
     }
   }
-
+  nipta [meta].constraints_type = boolean_operation_constraints
+  nipta.constraints = {
+    [refines] = {
+      boolean_operation_constraints,
+    }
+  }
 
 end
