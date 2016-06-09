@@ -6,7 +6,7 @@ return function (Layer, ipta, ref)
   local collection       = Layer.require "cosy/formalism/data.collection"
   local record           = Layer.require "cosy/formalism/data.record"
   local pta = Layer.require "cosy/formalism/automaton/timed_automaton/parametric_timed_automaton"
-  local literal = Layer.require "cosy/formalism/literal"
+  local identifier = Layer.require "cosy/formalism/identifier"
   local assignment_operation = Layer.require "cosy/formalism/automaton/timed_automaton/operation/assignment_operation"
   local number = Layer.require "cosy/formalism/literal.number"
 
@@ -46,7 +46,7 @@ return function (Layer, ipta, ref)
   ipta[meta].clock_type = {
   [refines] = {
     number,
-  }
+  },
   [meta] = {
     [record] = {
       id = {
@@ -104,19 +104,19 @@ return function (Layer, ipta, ref)
 
  ipta.stopwatches = {
    [refines] = {
-     collection,
- },
+    collection,
+   },
    [meta] = {
     [collection] = {
      value_type=ref[meta].clock_type,
     }
- }
+  }
 }
 
 ipta[meta].parameter_type = {
   [refines] = {
     number,
-  }
+  },
   [meta] = {
     [record] = {
       id = {
