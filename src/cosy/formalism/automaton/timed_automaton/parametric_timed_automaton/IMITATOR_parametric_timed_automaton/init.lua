@@ -130,10 +130,6 @@ ipta[meta].parameter_type = {
 
 ipta.parameters[meta][collection].value_type=ref [meta].parameter_type
 
-
-
-
-
-
+return ipta
 
 end

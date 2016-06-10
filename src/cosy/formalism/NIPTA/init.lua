@@ -77,4 +77,5 @@ return function (Layer, nipta)
     }
   }
 
+  return nipta
 end
